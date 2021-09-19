@@ -16,23 +16,12 @@ class App extends AbstractApp
 {
     public $name = 'phpack';
     public $version = '1.0.0';
-    public $description = 'Easily package php cli apps as phar archives';
+    public $description = 'Easily package php cli apps as phar executables';
 
     public $accessor = 'phpack';
 
     public $projectFilename = 'pack.php';
-
-    public static $verbose = false;
     
-    /**
-     * Middleware that wil run before every command
-     *
-     * @var array
-     */
-    public $globalMiddleware = [
-        // PrintApplicationHeader::class
-    ];
-
     /**
      * Array of commands that are not resigning in the Env::root() . '/Commands' directory
      *

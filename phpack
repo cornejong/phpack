@@ -3,18 +3,18 @@
 
 /**
 *--------------------------------------------------------------------------
-* {accessor} executable
+* phpack executable
 *--------------------------------------------------------------------------
 *
 * This file is basically your development bootstrap/stub
 * You'd use this file to access your application while in development.
-* it requires the boot.php and your main entry file ({main})
+* it requires the boot.php and your main entry file (main.php)
 *
 * For common (both in development and in the executable) dependencies and setup
 * please use boot.php instead of this file or the build bootstrap/stub file.
 *
 * Also it is an executable so you could just use
-*      $ ./{accessor}
+*      $ ./phpack
 * to access your app in development
 *
 */

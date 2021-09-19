@@ -7,10 +7,6 @@ use SouthCoast\KickStart\Config;
 use SouthCoast\Console\ErrorHandler;
 use SouthCoast\Console\Console;
 
-if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-    Console::error('Windows is currently not supported!');
-}
-
 Config::load(Env::isBuild() ? __dir__ . '/App/Config' : __dir__ . '/App/Config');
 
 Config::set('app.root', Env::isBuild() ? 'self.phar' : __dir__ . '/App');
@@ -29,7 +25,7 @@ if (file_exists(Config::get('app.root') . '/Register.php')) {
     require Config::get('app.root') . '/Register.php';
 }
 
-function app() {
+function &app() {
     return App\App::$instance;
 }
 
