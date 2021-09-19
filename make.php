@@ -22,14 +22,3 @@ function install()
 		__dir__ . '/build/debug/phpack -y self:install'
 	];
 }
-
-function init()
-{
-	return [
-        './run build debug',
-        './build/debug/phpack -y self:install'
-    ];
-
-}
-
-?>

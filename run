@@ -52,7 +52,4 @@ define('BUILD_TARGET', 'DEVELOPMENT');
 error_reporting(E_ALL);
 @ini_set('display_errors', 'On');
 
-/* Require the initializing script */
-require 'init.php';
-/* Create the app and run it */
-(new App\App)->run();
+require 'main.php';
