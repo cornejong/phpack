@@ -30,6 +30,8 @@ This are the currently supported commands:
 
             [ Initialize ]  $ phpack init
                             > Initialize phpack in a project.
+                            - Flags:
+                              --no-loader: Don't include the default autoloader
 
                  [ Build ]  $ phpack build {target?}
                             > Build a phar archive of the current project
