@@ -1,0 +1,57 @@
+#!/usr/bin/php
+<?php declare(strict_types = 1);
+
+/**
+*--------------------------------------------------------------------------
+* {accessor} executable
+*--------------------------------------------------------------------------
+*
+* This file is basically your development bootstrap/stub
+* You'd use this file to access your application while in development.
+* it requires your main entry file ({main}) and sets some build constants
+* basically just some environment stuff 
+* 
+* Also it is an executable so you could just use
+*      $ ./{accessor} 
+* to access your app in development
+*
+*/
+
+
+/**
+*--------------------------------------------------------------------------
+* Build Constants
+*--------------------------------------------------------------------------
+*
+* In the build bootstrap file (default: ./build/bootstrap.php) we define a few build constants.
+* The value will be replaced in the build process.
+* 
+* Since that bootstrap script will never be loaded in development
+* we're defining these constants here as well.
+* Just so you could use them in your app even if you're still in development
+*
+*/
+
+define('IS_BUILD', false);
+define('BUILD_ID', uniqid('DEV_'));
+define('BUILD_TIME', time());
+define('BUILD_NUMBER', 0);
+define('BUILD_TARGET', 'DEVELOPMENT');
+
+/**
+*--------------------------------------------------------------------------
+* Error Reporting
+*--------------------------------------------------------------------------
+*
+* Within your development environment it would be nice if you could get
+* some error reporting. Personally i'd add an error handler that's a 
+* little more sophisticated, but this at least gives you all the errors
+*
+*/
+
+error_reporting(E_ALL);
+@ini_set('display_errors', 'On');
+
+/* Require the main php entry file */
+require '{main}';
+

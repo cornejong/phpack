@@ -1,0 +1,58 @@
+#!/usr/bin/php
+<?php
+
+/**
+*--------------------------------------------------------------------------
+* {accessor} executable
+*--------------------------------------------------------------------------
+*
+* This file is basically your development bootstrap/stub
+* You'd use this file to access your application while in development.
+* it requires the boot.php and your main entry file ({main})
+*
+* For common (both in development and in the executable) dependencies and setup
+* please use boot.php instead of this file or the build bootstrap/stub file.
+*
+* Also it is an executable so you could just use
+*      $ ./{accessor}
+* to access your app in development
+*
+*/
+
+
+/**
+*--------------------------------------------------------------------------
+* Build Constants
+*--------------------------------------------------------------------------
+*
+* In the build bootstrap file (default: ./build/bootstrap.php) we define a few build constants.
+* The value will be replaced in the build process.
+*
+* Since that bootstrap script will never be loaded in development
+* we're defining these constants here as well.
+* Just so you could use them in your app even if you're still in development
+*
+*/
+
+define('IS_BUILD', false);
+define('BUILD_ID', uniqid('DEV_'));
+define('BUILD_TIME', time());
+define('BUILD_NUMBER', 0);
+define('BUILD_TARGET', 'DEVELOPMENT');
+
+/**
+*--------------------------------------------------------------------------
+* Error Reporting
+*--------------------------------------------------------------------------
+*
+* Within your development enviroment it would be nice if you could get some
+*
+*/
+
+error_reporting(E_ALL);
+@ini_set('display_errors', 'On');
+
+/* Require the initializing script */
+require 'init.php';
+/* Create the app and run it */
+(new App\App)->run();
