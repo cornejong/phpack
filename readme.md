@@ -25,6 +25,8 @@ $ phpack self:install
 ```
 $ phpack help
 
+Build: 6147ccdb2f484 - Time: 1632095451 - Number: 122 - Target: release
+
 Welcome to the phpack help menu.
 This are the currently supported commands:
 
