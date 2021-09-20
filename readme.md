@@ -19,6 +19,53 @@ $ phpack self:install
 
 ```
 
+## Initialize
+
+```
+
+$ phpack init
+
+> phpack => initialize project
+
+? Output filename? (myapp) : myapp
+? Application entry? (main.php) : main.php
+
+> Setting up basic project structure...
+✓ Created ./build/release/.keep
+✓ Created ./build/bootstrap.php
+✓ Created ./build/debug/.keep
+✓ Created ./autoloader.php
+✓ Created ./build/log.json
+✓ Created ./myapp
+✓ Created ./app/.keep
+✓ Created ./pack.php
+✓ Created ./main.php
+
+> Successfully initialized phpack!
+
+```
+
+## Build
+
+```
+
+$ phpack build
+
+> phpack => build executable
+
+- Adding Files to executable...
+
+✓ Compressed: main.php
+✓ Compressed: app/.keep
+
+> Added 2 files to myapp.
+
+✓ Added bootstrap stub to myapp
+✓ Changed file permissions
+
+>  Successfully created myapp executable
+
+```
 
 ## Usage
 
