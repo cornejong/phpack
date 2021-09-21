@@ -18,7 +18,7 @@ function main()
 function install() 
 {
     return [
-		__dir__ . '/run build debug',
-		__dir__ . '/build/debug/phpack -y self:install'
+		__dir__ . '/phpack build release',
+		__dir__ . '/build/release/phpack -y self:install'
 	];
 }

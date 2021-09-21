@@ -43,7 +43,7 @@ class initCommand extends Command
         if(empty($accessor)) {
             $accessor = $currentDirectoryName;
         }
-        $len = \strlen('Output filename? (' . $currentDirectoryName . ') : ');
+        // $len = \strlen('Output filename? (' . $currentDirectoryName . ') : ');
         // Confirm the entered value
         Console::log(Color::blue($accessor));
         
@@ -57,7 +57,7 @@ class initCommand extends Command
 
         Console::log(PHP_EOL . '> Setting up basic project structure...');
 
-        $templatePath = Config::get('build.root') . '/templates';
+        $templatePath = Config::get('build.root') . '/templates/basic';
 
         $sortCallback = function ($a, $b) {
             return strlen($b) - strlen($a);
@@ -129,7 +129,6 @@ class initCommand extends Command
                 Console::replaceLastLine(Color::red('✖') . ' Failed to create ./' . $main);
             }
         }
-
 
         system('chmod +x "' . getcwd() . '/' . $accessor . '"');
 

@@ -70,7 +70,7 @@ $ phpack build
 ## Usage
 
 ```
-$ phpack help
+$ phpack help -d
 
 Build: 6147ccdb2f484 - Time: 1632095451 - Number: 122 - Target: release
 

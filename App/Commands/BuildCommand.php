@@ -26,6 +26,12 @@ class BuildCommand extends Command
     public function boot()
     {
         Console::log('> ' . Color::blue('phpack') . ' => build executable' . PHP_EOL);
+
+        if (in_array(ini_get('phar.readonly'), ['On', '1', 'true'])) {
+            print("\033[31m✘\033[0m Please first change your ini directive 'phar.readonly' to 'Off'!" . PHP_EOL .
+            "  \033[2m(current: " . ini_get('phar.readonly') . ") (ini path: " . php_ini_loaded_file() . ")\033[0m") . PHP_EOL;
+            exit(1);
+        }
         
         $this->projectRoot = Locator::find(app()->projectFilename);
         if (!$this->projectRoot) {
